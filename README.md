@@ -1,5 +1,7 @@
 # skillcat-sync
 
+[![SkillCat](https://www.skillcat.es/api/badge/cmszct21e0001lvcp5lwm7yrh)](https://www.skillcat.es/skills/cmszct21e0001lvcp5lwm7yrh)
+
 Links [SkillCat](https://skillcat.es) to a real Claude Code install, so the skills, agents, and
 MCP servers you select on the site get installed — or uninstalled — for real, instead of just
 copy-pasting a command.
