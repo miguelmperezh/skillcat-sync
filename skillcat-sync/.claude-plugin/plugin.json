@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skillcat-sync",
+  "version": "1.0.0",
+  "description": "Link Claude Code to your SkillCat account and install/uninstall your catalog picks for real.",
+  "author": { "name": "SkillCat", "url": "https://skillcat.es" },
+  "homepage": "https://skillcat.es",
+  "skills": ["./"]
+}

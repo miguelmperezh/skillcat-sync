@@ -1,0 +1,15 @@
+{
+  "name": "skillcat-sync",
+  "owner": { "name": "SkillCat", "url": "https://skillcat.es" },
+  "metadata": {
+    "description": "Link Claude Code to your SkillCat account to install and uninstall your catalog picks for real.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "skillcat-sync",
+      "description": "Link this session to your SkillCat account and install/uninstall the skills, agents, and MCP servers you picked on skillcat.es.",
+      "source": "./skillcat-sync"
+    }
+  ]
+}
