@@ -1,0 +1,13 @@
+{
+  "name": "skillcat-sync-daemon",
+  "version": "1.0.0",
+  "description": "Background daemon that syncs SkillCat (skillcat.es) install/uninstall requests to a real Claude Code install on this machine.",
+  "type": "module",
+  "bin": {
+    "skillcat-sync": "./bin/daemon.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
