@@ -15,10 +15,20 @@ open a Claude Code session at all.
 npx github:miguelmperezh/skillcat-sync
 ```
 
-First run asks you to link (see **Use** below), then it just sits there watching your account.
-Leave it running in a terminal tab, or start it however you'd normally run a background process
-on your machine (`tmux`, a systemd/launchd service, etc.) — this repo only ships the script
-itself, not a platform-specific service installer.
+First run asks you to link (see **Use** below). If the prompt hangs and never accepts your
+paste, you're probably running this somewhere without a real interactive terminal attached (a
+chat agent's one-shot command execution, for instance) — use the non-interactive form instead:
+
+```bash
+SKILLCAT_LINK_CODE=XXXX-XXXX npx github:miguelmperezh/skillcat-sync
+# or
+npx github:miguelmperezh/skillcat-sync --code=XXXX-XXXX
+```
+
+After linking, it just sits there watching your account. Leave it running in a terminal tab, or
+start it however you'd normally run a background process on your machine (`tmux`, a
+systemd/launchd service, etc.) — this repo only ships the script itself, not a
+platform-specific service installer.
 
 Every request it runs was already confirmed on skillcat.es — name, verified/audit status, and a
 liability disclaimer, before you clicked "Sí, enviar" — so the daemon doesn't ask again. It logs

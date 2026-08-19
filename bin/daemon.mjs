@@ -47,10 +47,22 @@ function ask(question) {
 
 async function link() {
   console.log("Esta máquina no está vinculada a una cuenta de SkillCat todavía.");
-  console.log(
-    "Ve a https://www.skillcat.es/my-installs, inicia sesión, y pulsa 'Generar código de vinculación'.\n"
-  );
-  const code = await ask("Pega el código aquí: ");
+
+  // Non-interactive path: `SKILLCAT_LINK_CODE=XXXX-XXXX npx github:...` or
+  // `npx github:... --code=XXXX-XXXX` — avoids relying on stdin ever
+  // reaching this process (it may not, e.g. run through a chat agent's
+  // one-shot command execution instead of a real interactive terminal).
+  const flagCode = process.argv.find((a) => a.startsWith("--code="))?.slice("--code=".length);
+  const code =
+    flagCode ??
+    process.env.SKILLCAT_LINK_CODE ??
+    (await (async () => {
+      console.log(
+        "Ve a https://www.skillcat.es/my-installs, inicia sesión, y pulsa 'Generar código de vinculación'.\n"
+      );
+      return ask("Pega el código aquí: ");
+    })());
+
   const res = await fetch(`${API_BASE}/api/cli/link/exchange`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
